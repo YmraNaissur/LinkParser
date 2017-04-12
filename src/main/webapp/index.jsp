@@ -1,5 +1,9 @@
 <html>
-<body>
-<h2>Hello World!</h2>
-</body>
+    <body>
+        <form>
+            <label for="link">Link:</label>
+            <input type="text" id="link">
+            <input type="submit" value="Parse">
+        </form>
+    </body>
 </html>
