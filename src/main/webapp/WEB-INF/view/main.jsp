@@ -1,12 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:useBean id="links" type="java.util.List" scope="request"/>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
     <body>
-        <form>
+        <form method="post" action="${parseAction}">
             <label for="link">Link:</label>
-            <input type="text" id="link">
-            <input type="submit" value="Parse">
+            <input type="text" id="link" name="link" />
+            <input type="submit" value="Parse" />
         </form>
 
         <c:forEach items="${links}" var="link">
