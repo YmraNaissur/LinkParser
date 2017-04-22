@@ -2,8 +2,9 @@ package ru.naissur.repository.impl;
 
 import org.springframework.stereotype.Repository;
 import ru.naissur.repository.LinkParserRepository;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * naissur
@@ -11,15 +12,15 @@ import java.util.List;
  */
 @Repository
 public class InMemoryLinkParserImpl implements LinkParserRepository {
-    private List<String> repository = new ArrayList<>();
+    private Map<String, List<String>> repository = new HashMap<>();
 
     @Override
-    public void saveLinks(List<String> links) {
-        repository.addAll(links);
+    public void saveLinks(String address, List<String> links) {
+        repository.put(address, links);
     }
 
     @Override
-    public List<String> getLinks() {
-        return repository;
+    public List<String> getLinks(String address) {
+        return repository.get(address);
     }
 }

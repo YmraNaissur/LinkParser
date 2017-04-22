@@ -8,7 +8,7 @@ import java.util.List;
  */
 public interface LinkParserRepository {
     // сохраняем все ссылки в БД
-    void saveLinks(List<String> links);
+    void saveLinks(String address, List<String> links);
     // получаем все ссылки из БД
-    List<String> getLinks();
+    List<String> getLinks(String address);
 }
